@@ -1,53 +1,89 @@
-# Hello, I'm Paul Cumiskey
-<a href="https://www.linkedin.com/in/paul-cumiskey-09a2b3336/"><img src="https://img.shields.io/badge/-LinkedIn-0072b1?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+# 👋 Hello, I'm Paul Cumiskey
 
-Aspiring SOC Analyst and Cybersecurity student with hands-on experience in Splunk SIEM, alert triage, and incident response. CompTIA Security+ and CySA+ certified, with a strong focus on threat detection, log analysis, and blue team operations. This portfolio showcases my SOC labs, detection projects, and security research as I continue building real-world defensive skills.
-## Objective
-To obtain a Tier 1 SOC Analyst position where I can apply my SIEM monitoring, alert triage, and incident response skills to support security operations and continuously grow as a blue team professional.
+<a href="https://www.linkedin.com/in/paul-cumiskey-09a2b3336/">
+  <img src="https://img.shields.io/badge/-LinkedIn-0072b1?&style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>
 
-## Skills
-[Provide skills and associated project. Make sure to hyperlink the project - Remove this afterwards]]
+---
 
-| Skill                                         | Associated Project         |
-|-----------------------------------------------|----------------------------|
-| SIEM Implementation and Log Analysis          | <a href="https://github.com/PaulCumiskey/Detection-Lab">Detection Lab</a>|
-| Network Traffic Monitoring and Attack Detection | <a href="https://github.com/PaulCumiskey/Detection-Lab">Detection Lab</a>|
-| Security Automation with Shuffle SOAR         | SOC Automation Lab|
-| Incident Response Planning and Execution      | SOC Automation Lab|
-| Case Management with TheHive                  | SOC Automation Lab|
-| Scripting and Automation for Threat Mitigation | SOC Automation Lab|
-| Python | <a href="https://github.com/PaulCumiskey/keystroke_visualizer/blob/main/keystroke%20visualizer">Keystroke Visualizer</a>|
+## 🛡️ About Me
+Aspiring **SOC Analyst** and Cybersecurity student with hands-on experience in **SIEM monitoring, alert triage, and incident response**. Certified in **CompTIA Security+ and CySA+**, with a strong focus on **threat detection, log analysis, and blue team operations**.
 
-## Tools
-[Provide tools and break them down into categories. Use ChatGPT to help create the link - Remove this afterwards]]
+This portfolio highlights my **SOC labs, detection engineering projects, and security research** as I continue building real-world defensive skills.
 
-### Network
+---
+
+## 🎯 Objective
+Seeking a **Tier 1 SOC Analyst role** where I can contribute to security operations through **log analysis, threat detection, and incident response**, while continuing to grow in a fast-paced blue team environment.
+
+---
+
+## ⚡ Skills & Projects
+
+| Skill | Associated Project |
+|------|-------------------|
+| SIEM Implementation & Log Analysis | <a href="https://github.com/PaulCumiskey/Detection-Lab">Detection Lab</a> |
+| Network Traffic Analysis & Attack Detection | <a href="https://github.com/PaulCumiskey/Detection-Lab">Detection Lab</a> |
+| Security Automation (SOAR) | SOC Automation Lab *(add link)* |
+| Incident Response & Case Management | SOC Automation Lab *(add link)* |
+| Threat Mitigation & Scripting | SOC Automation Lab *(add link)* |
+| Python Development | <a href="https://github.com/PaulCumiskey/keystroke_visualizer/blob/main/keystroke%20visualizer">Keystroke Visualizer</a> |
+
+---
+
+## 🧰 Tools & Technologies
+
+### 🌐 Network Analysis
 <div>
-    <img src="https://img.shields.io/badge/-Wireshark-1679A7?&style=for-the-badge&logo=Wireshark&logoColor=white" />
-    <img src="https://img.shields.io/badge/-Suricata-EF3B2D?&style=for-the-badge&logo=Suricata&logoColor=white" />
-    <img src="https://img.shields.io/badge/-Zeek-777BB4?&style=for-the-badge&logo=Zeek&logoColor=white" />
+<img src="https://img.shields.io/badge/-Wireshark-1679A7?&style=for-the-badge&logo=Wireshark&logoColor=white" />
+<img src="https://img.shields.io/badge/-Suricata-EF3B2D?&style=for-the-badge&logo=Suricata&logoColor=white" />
+<img src="https://img.shields.io/badge/-Zeek-777BB4?&style=for-the-badge&logo=Zeek&logoColor=white" />
 </div>
 
-### Endpoint
+### 💻 Endpoint Security
 <div>
-    <img src="https://img.shields.io/badge/-Microsoft_Defender_for_Endpoint-00A4EF?&style=for-the-badge&logo=Microsoft&logoColor=white" />
-    <img src="https://img.shields.io/badge/-Velociraptor-4B275F?&style=for-the-badge&logo=Velociraptor&logoColor=white" />
+<img src="https://img.shields.io/badge/-Microsoft_Defender-00A4EF?&style=for-the-badge&logo=Microsoft&logoColor=white" />
+<img src="https://img.shields.io/badge/-Velociraptor-4B275F?&style=for-the-badge&logo=Velociraptor&logoColor=white" />
 </div>
 
-### SIEM
+### 📊 SIEM Platforms
 <div>
-    <img src="https://img.shields.io/badge/-Microsoft_Sentinel-0078D4?&style=for-the-badge&logo=Microsoft&logoColor=white" />
-    <img src="https://img.shields.io/badge/-Splunk-000000?&style=for-the-badge&logo=Splunk&logoColor=white" />
-    <img src="https://img.shields.io/badge/-Elastic-005571?&style=for-the-badge&logo=Elastic&logoColor=white" />
+<img src="https://img.shields.io/badge/-Microsoft_Sentinel-0078D4?&style=for-the-badge&logo=Microsoft&logoColor=white" />
+<img src="https://img.shields.io/badge/-Splunk-000000?&style=for-the-badge&logo=Splunk&logoColor=white" />
+<img src="https://img.shields.io/badge/-Elastic-005571?&style=for-the-badge&logo=Elastic&logoColor=white" />
 </div>
 
-## Certifications
+---
+
+## 📜 Certifications
 <div>
 <img src="https://img.shields.io/badge/-Security%2B-FF0000?&style=for-the-badge&logo=CompTIA&logoColor=white" />
 <img src="https://img.shields.io/badge/-CySA%2B-FF0000?&style=for-the-badge&logo=CompTIA&logoColor=white" />
 <img src="https://img.shields.io/badge/-Blue%20Team%20Level%201-1F4D8F?&style=for-the-badge&logo=shield&logoColor=white" />
 </div>
 
-## Projects
-- Detection Lab
-- SOC Automation Project
+---
+
+## 🚀 Featured Projects
+
+### 🔍 Detection Lab
+- Built a full SOC environment for log ingestion and analysis
+- Detected and investigated simulated attacks using SIEM tools
+- Practiced alert triage and threat hunting workflows
+
+### 🤖 SOC Automation Lab *(add link)*
+- Developed automated response workflows using SOAR tools
+- Integrated case management with TheHive
+- Reduced manual triage effort through automation
+
+---
+
+## 📫 Contact
+- 📧 Email: pcumiskey77@gmail.com
+- 💼 LinkedIn: https://www.linkedin.com/in/paul-cumiskey-09a2b3336/
+- 💻 GitHub: https://github.com/PaulCumiskey
+
+---
+
+## ⚡ Final Note
+This portfolio reflects my commitment to becoming a **high-performing SOC Analyst** through **hands-on labs, real-world simulations, and continuous learning**. I am actively seeking opportunities to contribute to **security operations and national defense missions**.
