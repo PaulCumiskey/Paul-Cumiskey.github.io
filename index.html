@@ -4,74 +4,118 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Paul Cumiskey | Cybersecurity Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --accent: #38bdf8;
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+    }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
+      background: var(--bg);
+      color: var(--text-main);
       line-height: 1.6;
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 900px;
       margin: auto;
-      padding: 2rem;
+      padding: 3rem 1.5rem;
     }
 
     h1, h2, h3 {
-      color: #38bdf8;
+      color: var(--accent);
+      font-weight: 700;
     }
 
     header {
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 4rem;
     }
 
-    .badge {
-      margin-top: 10px;
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
 
     .card {
-      background: #1e293b;
-      padding: 1.5rem;
-      border-radius: 16px;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      border: 1px solid #334155;
+      transition: transform 0.2s ease;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
+    .card:hover {
+      border-color: var(--accent);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .badge-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
       margin-top: 1rem;
     }
 
-    table, th, td {
-      border: 1px solid #334155;
+    .project-item {
+      margin-bottom: 1.5rem;
     }
 
-    th, td {
-      padding: 10px;
-      text-align: left;
+    .project-item b {
+      color: var(--accent);
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 5px;
     }
 
     .btn {
       display: inline-block;
-      margin: 5px 5px 0 0;
-      padding: 0.6rem 1rem;
-      background: #38bdf8;
-      color: #0f172a;
+      padding: 0.7rem 1.4rem;
+      background: var(--accent);
+      color: var(--bg);
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
+      border-radius: 6px;
+      font-weight: 700;
+      transition: opacity 0.2s;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 2rem;
     }
 
     footer {
       text-align: center;
-      padding: 2rem;
-      color: #64748b;
+      padding: 4rem 2rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    code {
+      font-family: 'Fira Code', monospace;
+      background: #000;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -81,82 +125,72 @@
 <div class="container">
 
   <header>
-    <h1>👋 Hello, I'm Paul Cumiskey</h1>
-    <a href="https://www.linkedin.com/in/paul-cumiskey-09a2b3336/">
-      <img class="badge" src="https://img.shields.io/badge/-LinkedIn-0072b1?&style=for-the-badge&logo=linkedin&logoColor=white" />
-    </a>
+    <h1>Paul Cumiskey</h1>
+    <p style="font-size: 1.2rem; color: var(--text-muted);">Cybersecurity Student | Aspiring SOC Analyst</p>
+    <div class="badge-group" style="justify-content: center;">
+        <img src="https://img.shields.io/badge/Security%2B-Certified-success?style=flat-square&logo=comptia" alt="Security+">
+        <img src="https://img.shields.io/badge/CySA%2B-Certified-blue?style=flat-square&logo=comptia" alt="CySA+">
+        <img src="https://img.shields.io/badge/BTL1-Certified-gold?style=flat-square" alt="BTL1">
+    </div>
   </header>
 
-  <div class="card">
-    <h2>🛡️ About Me</h2>
+  <section class="card">
+    <h2>🛡️ Profile</h2>
     <p>
-      Aspiring <b>SOC Analyst</b> with hands-on experience in <b>SIEM monitoring, alert triage, and incident response</b>.
-      Certified in <b>Security+ and CySA+</b>, focused on <b>threat detection, log analysis, and blue team operations</b>.
+      Senior Cybersecurity student with a focus on <b>Blue Team operations</b>. Experienced in building home labs to simulate enterprise environments, performing <b>log analysis in Splunk</b>, and managing <b>incident response</b> workflows. Currently refining my skills in real-time threat detection and SIEM engineering.
     </p>
-  </div>
+  </section>
 
-  <div class="card">
-    <h2>🎯 Objective</h2>
-    <p>
-      Seeking a Tier 1 SOC Analyst role to contribute to security operations through detection, analysis, and response.
-    </p>
-  </div>
+  <section class="grid">
+    <div class="card">
+      <h3>🔍 Technical Skills</h3>
+      <ul style="padding-left: 20px;">
+        <li>SIEM: <code>Splunk</code>, <code>Elastic</code></li>
+        <li>Traffic: <code>Wireshark</code>, <code>Zeek</code></li>
+        <li>IDS/IPS: <code>Suricata</code>, <code>Snort</code></li>
+        <li>Endpoint: <code>Sysmon</code>, <code>Defender</code></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>💻 Scripting & Tools</h3>
+      <ul style="padding-left: 20px;">
+        <li>Python (Automation)</li>
+        <li>PowerShell & Bash</li>
+        <li>Virtualization: Proxmox, ESXi</li>
+      </ul>
+    </div>
+  </section>
 
-  <div class="card">
-    <h2>⚡ Skills & Projects</h2>
-    <table>
-      <tr><th>Skill</th><th>Project</th></tr>
-      <tr><td>SIEM & Log Analysis</td><td><a href="https://github.com/PaulCumiskey/Detection-Lab">Detection Lab</a></td></tr>
-      <tr><td>Network Analysis</td><td><a href="https://github.com/PaulCumiskey/Detection-Lab">Detection Lab</a></td></tr>
-      <tr><td>SOAR Automation</td><td>SOC Automation Lab</td></tr>
-      <tr><td>Incident Response</td><td>SOC Automation Lab</td></tr>
-      <tr><td>Python</td><td><a href="https://github.com/PaulCumiskey/keystroke_visualizer">Keystroke Visualizer</a></td></tr>
-    </table>
-  </div>
+  <section class="card">
+    <h2>🚀 Featured Projects</h2>
+    
+    <div class="project-item">
+      <b>Detection Lab (Active Directory + Splunk)</b>
+      <p>Deployed a full-stack lab with telemetry ingestion into Splunk. Focused on detecting Mimikatz usage, Brute Force attacks, and Lateral Movement using Sysmon and Event Logs.</p>
+      <a href="https://github.com/PaulCumiskey/Detection-Lab" style="color: var(--accent); font-size: 0.9rem;">View on GitHub →</a>
+    </div>
 
-  <div class="card">
-    <h2>🧰 Tools & Technologies</h2>
+    <div class="project-item" style="border-top: 1px solid #334155; pt-3; margin-top: 20px; padding-top: 15px;">
+      <b>SOC Automation Lab</b>
+      <p>Integrated Shuffle (SOAR) with TheHive and Cortex to automate alert enrichment. Reduced manual triage time by fetching reputation data for IOCs automatically.</p>
+    </div>
 
-    <h3>Network</h3>
-    <img src="https://img.shields.io/badge/-Wireshark-1679A7?style=for-the-badge">
-    <img src="https://img.shields.io/badge/-Suricata-EF3B2D?style=for-the-badge">
-    <img src="https://img.shields.io/badge/-Zeek-777BB4?style=for-the-badge">
+    <div class="project-item" style="border-top: 1px solid #334155; pt-3; margin-top: 20px; padding-top: 15px;">
+        <b>Keystroke Visualizer</b>
+        <p>A Python-based tool for analyzing input patterns, showcasing data visualization and scripting proficiency.</p>
+        <a href="https://github.com/PaulCumiskey/keystroke_visualizer" style="color: var(--accent); font-size: 0.9rem;">View on GitHub →</a>
+      </div>
+  </section>
 
-    <h3>SIEM</h3>
-    <img src="https://img.shields.io/badge/-Splunk-000000?style=for-the-badge">
-    <img src="https://img.shields.io/badge/-Elastic-005571?style=for-the-badge">
-
-    <h3>Endpoint</h3>
-    <img src="https://img.shields.io/badge/-Defender-00A4EF?style=for-the-badge">
-
-  </div>
-
-  <div class="card">
-    <h2>📜 Certifications</h2>
-    <ul>
-      <li><a href="https://www.comptia.org/certifications/security">Security+</a></li>
-      <li><a href="https://www.comptia.org/certifications/cybersecurity-analyst">CySA+</a></li>
-      <li><a href="https://securityblue.team/why-btl1/">BTL1</a></li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h2>🚀 Projects</h2>
-    <p><b>Detection Lab:</b> Built SOC environment and analyzed simulated attacks.</p>
-    <p><b>SOC Automation Lab:</b> Automated incident response workflows.</p>
-  </div>
-
-  <div class="card">
-    <h2>📫 Contact</h2>
-    <p>Email: pcumiskey77@gmail.com</p>
-    <a href="https://github.com/PaulCumiskey" class="btn">GitHub</a>
-    <a href="https://www.linkedin.com/in/paul-cumiskey-09a2b3336/" class="btn">LinkedIn</a>
+  <div class="contact-links">
+    <a href="mailto:pcumiskey77@gmail.com" class="btn">Email Me</a>
+    <a href="https://www.linkedin.com/in/paul-cumiskey-09a2b3336/" class="btn" style="background: #1e293b; color: white; border: 1px solid var(--accent);">LinkedIn</a>
   </div>
 
 </div>
 
 <footer>
-  © 2026 Paul Cumiskey
+  © 2026 Paul Cumiskey | Built with 💙 for Blue Teaming
 </footer>
 
 </body>
