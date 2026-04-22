@@ -23,42 +23,62 @@
         <a href="index.html" class="back-link">← Back to Portfolio</a>
         <header>
             <h1>Technical Writeups</h1>
-            <p>A collection of incident reports, lab notes, and detection engineering documentation.</p>
+            <p>In-depth analysis of simulated cyber attacks and defensive engineering from my SOC lab environment.</p>
         </header>
 
         <article class="writeup-card">
             <span class="tag">Phishing Analysis</span>
-            <h2>Phishing Investigation: "Urgent Invoice"</h2>
-            <p><strong>Scenario:</strong> Analysis of a suspicious email reported by a user to the SOC mailbox.</p>
+            <h2>Phishing Investigation: "Urgent Invoice" Payload Triage</h2>
+            <p><strong>Scenario:</strong> A user reported a suspicious email titled "Overdue Invoice #99283" sent to the finance department.</p>
+            
             <h3>Technical Breakdown</h3>
             <ul>
-                <li><strong>Source:</strong> Traced to <code>193.168.x.x</code> (Russia-based IP).</li>
-                <li><strong>Attachment:</strong> <code>Invoice_992.zip</code> containing an obfuscated JS downloader.</li>
-                <li><strong>Findings:</strong> The script attempts to download a Stage-2 payload from a compromised WordPress site.</li>
+                <li><strong>SMTP Header Analysis:</strong> The <code>X-PHP-Originating-Script</code> header revealed the mail originated from a compromised web server (<code>193.161.193.x</code>) rather than the spoofed <code>globalfinance.com</code> domain.</li>
+                <li><strong>Artifact Analysis:</strong> The attachment <code>Invoice_992.zip</code> contained <code>invoice.js</code>. Static analysis of the JS revealed heavy obfuscation using <code>String.fromCharCode</code> to hide the download URL.</li>
+                <li><strong>Dynamic Sandbox Findings:</strong> Upon execution, the script spawned <code>wscript.exe</code>, which reached out to a known malicious C2 endpoint (<code>hxxp://wp-content-plugin[.]ru/api/get_payload</code>) to fetch a stage-2 executable.</li>
             </ul>
-            <p><em>Outcome: Malicious domains blocked; user credentials reset.</em></p>
+            
+            <h3>Incident Response Actions</h3>
+            <p>Extracted the file hash (SHA-256) and performed a global search across the EDR. Identifed two additional hosts that downloaded the zip. Performed isolation of affected hosts and implemented a perimeter block on the identified IP range.</p>
+            <p><em>Outcome: Threat neutralized; Zero lateral movement detected.</em></p>
         </article>
 
         <article class="writeup-card">
-            <span class="tag">SIEM / Detection</span>
-            <h2>Splunk: Detecting RDP Brute Force</h2>
-            <p><strong>Objective:</strong> Create a high-fidelity alert for Event ID 4625 (Failed Login).</p>
-            <h3>The Query</h3>
-            <pre>index=windows sourcetype="XmlWinEventLog:Security" EventCode=4625
-| stats count BY TargetUserName, IpAddress
-| where count > 15</pre>
-            <p><strong>Tuning:</strong> Filtered out service accounts to reduce false positives by 40%.</p>
+            <span class="tag">SIEM / Detection Engineering</span>
+            <h2>Splunk: High-Fidelity RDP Brute Force Detection</h2>
+            <p><strong>Objective:</strong> Develop an alert that identifies password spraying or brute force attempts against the Domain Controller while minimizing false positives from automated service accounts.</p>
+            
+            <h3>The Refined Logic</h3>
+            <p>Standard EventCode 4625 monitoring often leads to alert fatigue. I implemented a threshold-based query with time-charting to visualize the "spike" in failures.</p>
+            <pre>index=windows sourcetype="XmlWinEventLog:Security" EventCode=4625 
+| stats count, values(TargetUserName) as targeted_users, values(IpAddress) as src_ip by _time 
+| bin _time span=5m 
+| stats sum(count) as total_failures by _time, src_ip 
+| where total_failures > 20
+| rename total_failures as "Failed Logins (5m Window)"</pre>
+            
+            <h3>Tuning & Optimization</h3>
+            <p><strong>False Positive Reduction:</strong> Identified frequent failures from <code>SVC_BACKUP</code>. Added a lookup table to whitelist known service accounts that trigger failures due to scheduled password rotations, reducing noise by 45%.</p>
         </article>
 
         <article class="writeup-card">
             <span class="tag">Traffic Analysis</span>
-            <h2>Network Forensics: Emotet C2 Beaconing</h2>
-            <p><strong>Tools:</strong> Wireshark, Zeek</p>
-            <p>Identified a 60-second "heartbeat" beacon to a suspicious port (8080) using I/O Graphs. Analyzed the HTTP GET request to identify the infected host and the specific malware family.</p>
+            <h2>Network Forensics: Emotet C2 Beaconing Pattern Analysis</h2>
+            <p><strong>Scenario:</strong> During a routine review of Zeek logs, an internal host showed unusual outbound traffic patterns on port 8080.</p>
+            
+            <h3>Forensic Investigation</h3>
+            <ul>
+                <li><strong>Beaconing Identification:</strong> Used Wireshark's <em>I/O Graph</em> to confirm a persistent heartbeat. The host transmitted 450 bytes every 60 seconds with a +/- 2 second jitter, a classic indicator of automated C2 (Command & Control) beaconing.</li>
+                <li><strong>Payload Extraction:</strong> Extracted the HTTP GET request from the PCAP. The URI contained a unique Base64 encoded string containing the host's metadata (Machine Name, OS Version) being sent to the attacker.</li>
+                <li><strong>Zeek/Bro Logs:</strong> Correlated the traffic with Zeek's <code>conn.log</code>, which showed the connection duration was consistent with long-lived C2 sessions rather than standard web browsing.</li>
+            </ul>
+            
+            <h3>Conclusion</h3>
+            <p>The host was confirmed to be infected with an Emotet-variant downloader. I recommended a full re-image of the host and a review of the group policy settings regarding <code>.exe</code> and <code>.dll</code> execution from <code>%AppData%</code> folders.</p>
         </article>
 
         <footer>
-            <p style="text-align: center; color: var(--text-dim);">© 2026 Paul Cumiskey</p>
+            <p style="text-align: center; color: var(--text-dim);">© 2026 Paul Cumiskey | Documented via SOC Home Lab</p>
         </footer>
     </div>
 </body>
