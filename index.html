@@ -300,29 +300,70 @@
     </div>
   </div>
 
-  <div class="card">
-    <h2>🚀 Featured Defensive Projects</h2>
-    
-    <div class="project">
-      <div class="project-header">
-        <h3>Detection Lab & SIEM Monitoring</h3>
-      </div>
-      <p>Simulated real-world attack scenarios (Brute Force, RDP Tunneling) and created custom Splunk alerts to visualize the attack chain. Integrated Sysmon with the Windows Event Forwarder for granular visibility.</p>
-      <div class="project-tags">
-        <span class="tag">Splunk</span> <span class="tag">Active Directory</span> <span class="tag">Blue Team</span>
-      </div>
-    </div>
+ <div class="card">
+  <h2>🚀 Featured Defensive Projects</h2>
 
-    <div class="project" style="border-top: 1px solid var(--border); padding-top: 1.5rem;">
-      <div class="project-header">
-        <h3>SOAR Automation Workflow</h3>
+  <div class="project-item">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+      <h3 style="margin: 0; color: var(--accent);">Enterprise Detection Lab & SIEM Engineering</h3>
+      <a href="https://github.com/PaulCumiskey/Detection-Lab" class="tag" style="text-decoration: none; border: 1px solid var(--accent);">View Repository →</a>
+    </div>
+    
+    <p style="margin-top: 10px;">
+      Built a multi-stage virtualized environment to simulate enterprise-level telemetry ingestion and monitoring.
+    </p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 15px 0;">
+      <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 8px;">
+        <strong style="color: var(--text-main); font-size: 0.9rem;">The Build</strong>
+        <ul style="font-size: 0.85rem; color: var(--text-dim); padding-left: 18px; margin-top: 5px;">
+          <li>Configured <b>Windows Event Forwarding (WEF)</b> and <b>Sysmon</b> for granular endpoint visibility.</li>
+          <li>Deployed <b>Splunk Enterprise</b> as a central indexer for logs from AD, Ubuntu, and Suricata.</li>
+        </ul>
       </div>
-      <p>Automated the enrichment of IP addresses and hashes using Shuffle SOAR. Alerts from the SIEM are automatically checked against VirusTotal and blocked if the reputation score is below a specific threshold.</p>
-      <div class="project-tags">
-        <span class="tag">SOAR</span> <span class="tag">Automation</span> <span class="tag">API Integration</span>
+      <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 8px;">
+        <strong style="color: var(--text-main); font-size: 0.9rem;">The Detection</strong>
+        <ul style="font-size: 0.85rem; color: var(--text-dim); padding-left: 18px; margin-top: 5px;">
+          <li>Developed custom SPL queries to identify <b>Pass-the-Hash</b> and <b>Golden Ticket</b> attacks.</li>
+          <li>Created visualization dashboards to track failed logins and lateral movement.</li>
+        </ul>
       </div>
     </div>
   </div>
+
+  <hr style="border: 0; border-top: 1px solid var(--border); margin: 2rem 0;">
+
+  <div class="project-item">
+    <h3 style="margin: 0; color: var(--accent);">Automated Incident Response Pipeline (SOAR)</h3>
+    <p style="margin-top: 10px;">
+      Designed a workflow to reduce "Alert Fatigue" by automating the triage of suspicious network indicators.
+    </p>
+
+    <div style="margin: 15px 0; padding: 15px; background: rgba(56, 189, 248, 0.05); border-radius: 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">
+       <span style="color: var(--accent);">[Flow]</span> Splunk Alert -> Shuffle SOAR -> VirusTotal API -> TheHive (Case Creation)
+    </div>
+
+    <ul style="font-size: 0.9rem; color: var(--text-dim);">
+      <li><b>Automation Logic:</b> Built a Python-integrated workflow that extracts IOCs (IPs/Hashes) from incoming alerts.</li>
+      <li><b>Enrichment:</b> The system automatically queries <b>VirusTotal</b> and <b>AbuseIPDB</b>, adding reputation scores to the ticket before an analyst even opens it.</li>
+      <li><b>Impact:</b> Reduced initial triage time by approximately 70% per alert.</li>
+    </ul>
+  </div>
+
+  <hr style="border: 0; border-top: 1px solid var(--border); margin: 2rem 0;">
+
+  <div class="project-item">
+    <h3 style="margin: 0; color: var(--accent);">Network Traffic Analysis & NIDS Deployment</h3>
+    <p style="margin-top: 10px;">
+      Focuses on real-time packet inspection and identifying command-and-control (C2) traffic patterns.
+    </p>
+    <ul style="font-size: 0.9rem; color: var(--text-dim);">
+      <li>Utilized <b>Wireshark</b> and <b>Zeek</b> to analyze PCAP files from simulated malware infections (e.g., Emotet).</li>
+      <li>Configured <b>Suricata</b> rules to alert on non-standard port usage and suspicious DNS tunneling attempts.</li>
+      <li>Documented a technical write-up on identifying beaconing behavior through periodic traffic spikes.</li>
+    </ul>
+  </div>
+</div>
 
   <div class="card">
   <h2>📜 Professional Certifications</h2>
