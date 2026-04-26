@@ -252,6 +252,48 @@
   </section>
 
   <section class="card" id="writeups">
+    <h2>Technical Writeups & Lab Reports</h2>
+    <p style="color: var(--text-dim); margin-bottom: 2rem; font-size: 0.95rem;">
+      Documentation of forensic investigations, malware analysis, and detection engineering workflows.
+    </p>
+
+    <div class="grid">
+      <div style="border: 1px solid var(--border); padding: 1.5rem; border-radius: 8px; display: flex; flex-direction: column; background: rgba(255,255,255,0.02);">
+        <div style="margin-bottom: 12px;">
+            <span class="tag" style="background: rgba(56, 189, 248, 0.1); color: var(--accent); border: 1px solid var(--accent-glow);">Forensics</span>
+        </div>
+        <h3 style="margin: 0 0 10px 0; font-size: 1.1rem; color: var(--text-main);">BTL1: Phishing Analysis</h3>
+        <p style="font-size: 0.85rem; color: var(--text-dim); flex-grow: 1; margin-bottom: 20px;">
+          End-to-end investigation of a credential harvesting attempt. Includes header analysis, attachment sandboxing, and C2 infrastructure mapping.
+        </p>
+        <a href="writeups.html" class="btn" style="width: 100%; text-align: center; justify-content: center;">Review Investigation</a>
+      </div>
+
+      <div style="border: 1px solid var(--border); padding: 1.5rem; border-radius: 8px; display: flex; flex-direction: column; background: rgba(255,255,255,0.02);">
+        <div style="margin-bottom: 12px;">
+            <span class="tag" style="background: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.2);">Detection</span>
+        </div>
+        <h3 style="margin: 0 0 10px 0; font-size: 1.1rem; color: var(--text-main);">Splunk: Brute Force Logic</h3>
+        <p style="font-size: 0.85rem; color: var(--text-dim); flex-grow: 1; margin-bottom: 20px;">
+          Developing high-fidelity SPL queries to detect Event ID 4625 spikes. Focused on reducing alert fatigue by excluding known service account patterns.
+        </p>
+        <a href="writeups.html" class="btn" style="width: 100%; text-align: center; justify-content: center;">Review Investigation</a>
+      </div>
+
+      <div style="border: 1px solid var(--border); padding: 1.5rem; border-radius: 8px; display: flex; flex-direction: column; background: rgba(255,255,255,0.02);">
+        <div style="margin-bottom: 12px;">
+            <span class="tag" style="background: rgba(168, 85, 247, 0.1); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.2);">Network</span>
+        </div>
+        <h3 style="margin: 0 0 10px 0; font-size: 1.1rem; color: var(--text-main);">Emotet Traffic Analysis</h3>
+        <p style="font-size: 0.85rem; color: var(--text-dim); flex-grow: 1; margin-bottom: 20px;">
+          PCAP deep-dive using Wireshark to identify HTTP beaconing and lateral movement within a compromised subnet.
+        </p>
+        <a href="writeups.html" class="btn" style="width: 100%; text-align: center; justify-content: center;">Review Investigation</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="writeups">
     <h2>Certifications</h2>
     <div style="display: flex; flex-wrap: wrap; gap: 10px;">
       <span class="tag">Blue Team Level 1 (BTL1)</span>
